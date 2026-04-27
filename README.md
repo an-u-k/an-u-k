@@ -1,16 +1,436 @@
-## Hi there 👋
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anu Kochumon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<!--
-**an-u-k/an-u-k** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+  :root {
+    --bg: #ffffff;
+    --bg2: #f6f8fa;
+    --text: #24292f;
+    --muted: #57606a;
+    --border: #d0d7de;
+    --accent: #0969da;
+    --sans: 'Inter', sans-serif;
+    --mono: 'Fira Code', monospace;
+    --radius: 6px;
+  }
 
-Here are some ideas to get you started:
+  body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+  }
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  /* HERO */
+  .hero { text-align: center; padding-bottom: 0.5rem; }
+
+  .hero h1 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-lines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-line {
+    font-size: 15px;
+    color: var(--muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    max-width: 600px;
+    text-align: left;
+  }
+
+  .typed-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--accent);
+    background: #ddf4ff;
+    border: 1px solid #54aeff66;
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin-top: 0.5rem;
+    min-height: 30px;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 14px;
+    background: var(--accent);
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  /* SECTION HEAD */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+  }
+
+  /* BADGES */
+  .badge-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 7px 14px;
+    border-radius: var(--radius);
+    color: #fff;
+    text-transform: uppercase;
+    transition: transform 0.15s, opacity 0.15s;
+    cursor: default;
+  }
+  .badge:hover { transform: translateY(-2px); opacity: 0.88; }
+
+  .b-python  { background: #3572A5; }
+  .b-java    { background: #e76f00; }
+  .b-r       { background: #276DC3; }
+  .b-sql     { background: #336791; }
+  .b-spring  { background: #6DB33F; }
+  .b-tf      { background: #FF6F00; }
+  .b-sklearn { background: #F7931E; }
+  .b-pg      { background: #336791; }
+  .b-mysql   { background: #00618A; }
+  .b-aws     { background: #FF9900; color: #111; }
+  .b-git     { background: #F05032; }
+  .b-jenkins { background: #D33833; }
+  .b-powerbi { background: #F2C811; color: #111; }
+  .b-tableau { background: #E97627; }
+  .b-agile   { background: #0052CC; }
+  .b-nlp     { background: #8250df; }
+  .b-ml      { background: #1a7f37; }
+
+  /* ABOUT */
+  .about-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .about-list li {
+    font-size: 15px;
+    color: var(--muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.65;
+  }
+  .about-list li .ei { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+  /* STATS */
+  .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 1rem 0; }
+  .stat { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem; text-align: center; background: var(--bg2); }
+  .stat-num { font-size: 26px; font-weight: 700; color: var(--accent); }
+  .stat-lbl { font-size: 12px; color: var(--muted); margin-top: 3px; }
+
+  /* EXP */
+  .exp-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 14px;
+    background: var(--bg2);
+    transition: border-color 0.2s;
+  }
+  .exp-card:hover { border-color: var(--accent); }
+  .exp-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 4px; }
+  .exp-role { font-size: 16px; font-weight: 600; }
+  .exp-company { font-size: 13px; color: var(--accent); font-family: var(--mono); margin-bottom: 3px; }
+  .exp-period { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .exp-bullets { list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 5px; }
+  .exp-bullets li { font-size: 14px; color: var(--muted); padding-left: 18px; position: relative; line-height: 1.6; }
+  .exp-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); }
+
+  /* PROJECTS */
+  .project-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .project-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(9,105,218,0.08); }
+  .project-top { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+  .project-icon { font-size: 20px; }
+  .project-title { font-size: 16px; font-weight: 600; color: var(--accent); }
+  .project-org { font-size: 12px; color: var(--muted); font-family: var(--mono); margin-bottom: 8px; }
+  .project-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; }
+
+  /* EDUCATION */
+  .edu-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 10px;
+    background: var(--bg2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: border-color 0.2s;
+  }
+  .edu-card:hover { border-color: var(--accent); }
+  .edu-deg { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+  .edu-school { font-size: 13px; color: var(--muted); font-family: var(--mono); }
+  .edu-year { font-size: 12px; color: var(--muted); white-space: nowrap; text-align: right; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .contact-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    background: var(--bg2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s;
+  }
+  .contact-card:hover { border-color: var(--accent); }
+  .contact-icon { font-size: 20px; }
+  .contact-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .contact-value { font-size: 14px; font-weight: 500; color: var(--accent); }
+
+  footer { text-align: center; font-size: 13px; color: var(--muted); padding-top: 1rem; font-family: var(--mono); }
+
+  @media (max-width: 600px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .edu-card { flex-direction: column; align-items: flex-start; }
+    .exp-top { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Hi 👋, I'm Anu</h1>
+    <div class="hero-lines">
+      <div class="hero-line"><span>🎓</span> Currently pursuing MSc in Data Science, Statistics & Decision Analytics at Stockholm University</div>
+      <div class="hero-line"><span>💡</span> Passionate about transforming data into knowledge and building intelligent systems that drive real-world impact</div>
+      <div class="hero-line"><span>🚀</span> 3+ years building scalable backend systems & REST APIs at Nissan Digital India</div>
+    </div>
+    <div class="typed-wrap"><span id="typed"></span><span class="cursor"></span></div>
+  </div>
+
+  <hr />
+
+  <!-- ABOUT -->
+  <div class="section-head">🙋‍♀️ About Me</div>
+  <ul class="about-list">
+    <li><span class="ei">🎓</span> Studying MSc in Data Science – Stockholm University (2025 – present)</li>
+    <li><span class="ei">🏢</span> Former Software Engineer at Nissan Digital India LLP (Aug 2022 – Mar 2025)</li>
+    <li><span class="ei">🧠</span> Strong foundation in statistical reasoning, machine learning, and quantitative problem-solving</li>
+    <li><span class="ei">🔧</span> Love building clean, efficient backend systems and APIs with Java & Spring Boot</li>
+    <li><span class="ei">🌍</span> Originally from Kerala, India — now living and studying in Stockholm, Sweden</li>
+    <li><span class="ei">📫</span> Reach me at <strong>anuriju1910@gmail.com</strong></li>
+  </ul>
+
+
+
+  <!-- PROGRAMMING LANGUAGES -->
+  <div class="section-head">💻 Programming Languages</div>
+  <div class="badge-grid">
+    <span class="badge b-python">🐍 Python</span>
+    <span class="badge b-java">☕ Java</span>
+    <span class="badge b-r">📊 R</span>
+    <span class="badge b-sql">🗄️ SQL</span>
+  </div>
+
+  <hr />
+
+  <!-- FRAMEWORKS -->
+  <div class="section-head">⚙️ Frameworks & Libraries</div>
+  <div class="badge-grid">
+    <span class="badge b-spring">🌱 Spring Boot</span>
+    <span class="badge b-tf">🔶 TensorFlow</span>
+    <span class="badge b-sklearn">🤖 Scikit-learn</span>
+    <span class="badge b-nlp">📝 NLP</span>
+  </div>
+
+  <hr />
+
+  <!-- DATABASES & CLOUD -->
+  <div class="section-head">🗄️ Databases & Cloud</div>
+  <div class="badge-grid">
+    <span class="badge b-pg">🐘 PostgreSQL</span>
+    <span class="badge b-mysql">🐬 MySQL</span>
+    <span class="badge b-aws">☁️ AWS</span>
+    <span class="badge b-git">🔀 Git</span>
+    <span class="badge b-jenkins">🤖 Jenkins</span>
+  </div>
+
+  <hr />
+
+  <!-- DATA & VIZ -->
+  <div class="section-head">📈 Data & Visualisation</div>
+  <div class="badge-grid">
+    <span class="badge b-powerbi">📊 Power BI</span>
+    <span class="badge b-tableau">📉 Tableau</span>
+    <span class="badge b-ml">🧠 Machine Learning</span>
+    <span class="badge b-agile">🔄 Agile/Scrum</span>
+  </div>
+
+  <hr />
+
+  <!-- EXPERIENCE -->
+  <div class="section-head">💼 Work Experience</div>
+  <div class="exp-card">
+    <div class="exp-top">
+      <div>
+        <div class="exp-role">Software Engineer I</div>
+        <div class="exp-company">Nissan Digital India LLP</div>
+      </div>
+      <div class="exp-period">Aug 2022 – Mar 2025</div>
+    </div>
+    <ul class="exp-bullets">
+      <li>Implemented features across two high-priority backend projects simultaneously</li>
+      <li>Built RESTful microservices from scratch with Java & Spring Boot, achieving 70/100 efficiency in customer onboarding</li>
+      <li>Developed and manually tested APIs for inventory updates, sales tracking, and secure car-parts transactions</li>
+      <li>Debugged and optimised KPI functions, closing multiple refactoring tickets in short durations</li>
+      <li>Collaborated with cross-functional teams using Agile/Scrum and Kanban methodologies</li>
+    </ul>
+  </div>
+
+  <hr />
+
+  <!-- PROJECTS -->
+  <div class="section-head">🚀 Projects</div>
+
+  <div class="project-card">
+    <div class="project-top"><span class="project-icon">🤖</span><div class="project-title">Resume Ranking System</div></div>
+    <div class="project-org">Personal Project · Jan 2022 – Aug 2022</div>
+    <p class="project-desc">Automated resume ranking pipeline that ingests PDFs, converts them to text, and applies NLP (lexical, syntactic, semantic analysis) to score and rank candidates — helping recruiters shortlist faster and smarter.</p>
+    <div class="badge-grid">
+      <span class="badge b-python">🐍 Python</span>
+      <span class="badge b-nlp">📝 NLP</span>
+      <span class="badge b-ml">🧠 ML scoring</span>
+    </div>
+  </div>
+
+
+
+
+  <!-- EDUCATION -->
+  <div class="section-head">🎓 Education</div>
+  <div class="edu-card">
+    <div>
+      <div class="edu-deg">MSc Data Science, Statistics & Decision Analysis</div>
+      <div class="edu-school">Stockholm University, Sweden 🇸🇪</div>
+    </div>
+    <div class="edu-year">2025 – present</div>
+  </div>
+  <div class="edu-card">
+    <div>
+      <div class="edu-deg">Bachelor of Information Technology</div>
+      <div class="edu-school">Government Engineering College, Trivandrum 🇮🇳</div>
+    </div>
+    <div class="edu-year">2018 – 2022<br/></div>
+  </div>
+
+  <hr />
+
+  <!-- CONTACT -->
+  <div class="section-head">📬 Connect with Me</div>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:anuriju1910@gmail.com">
+      <span class="contact-icon">✉️</span>
+      <div><div class="contact-label">Email</div><div class="contact-value">anuriju1910@gmail.com</div></div>
+    </a>
+    <a class="contact-card" href="https://linkedin.com/in/an-u/" target="_blank" rel="noopener">
+      <span class="contact-icon">💼</span>
+      <div><div class="contact-label">LinkedIn</div><div class="contact-value">linkedin.com/in/an-u</div></div>
+    </a>
+    
+    <div class="contact-card">
+      <span class="contact-icon">📍</span>
+      <div><div class="contact-label">Location</div><div class="contact-value">Stockholm, Sweden</div></div>
+    </div>
+  </div>
+
+  <hr />
+  <footer>✨ Made with ❤️</footer>
+
+</div>
+<script>
+  const phrases = [
+    'Software Engineer → Data Scientist',
+    'Building scalable APIs & ML systems',
+    'Python | Java | R | SQL',
+    'Open to opportunities 🚀'
+  ];
+  let pi = 0, ci = 0, deleting = false;
+  const el = document.getElementById('typed');
+  function type() {
+    const phrase = phrases[pi];
+    if (!deleting) {
+      el.textContent = phrase.slice(0, ++ci);
+      if (ci === phrase.length) { deleting = true; setTimeout(type, 1800); return; }
+    } else {
+      el.textContent = phrase.slice(0, --ci);
+      if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+    }
+    setTimeout(type, deleting ? 40 : 70);
+  }
+  type();
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.project-card,.exp-card,.edu-card,.stat,.contact-card').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(14px)';
+    el.style.transition = `opacity 0.4s ${i*0.05}s ease, transform 0.4s ${i*0.05}s ease, border-color 0.2s, box-shadow 0.2s`;
+    obs.observe(el);
+  });
+</script>
+</body>
+</html>
