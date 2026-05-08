@@ -20,9 +20,8 @@ Hey! I'm Anu — an engineer who loves solving problems with code and data 💡
 
 I spent 3 years building backend systems and APIs at **Nissan Digital India**, and now I'm leveling up with a **Master's in Data Science** at Stockholm University 🎓
 
-I moved from sunny **Kerala, India** 🇮🇳 all the way to **Stockholm, Sweden** 🇸🇪 — and yes, the winters are a LOT colder here ❄️😄
+I moved from sunny **Kerala, India** all the way to **Stockholm, Sweden** — and yes, the winters are a LOT colder here ❄️😄
 
-When I'm not coding, I'm probably exploring Stockholm or figuring out how to make machines smarter 🤖
 
 ```python
 def about_me():
@@ -67,20 +66,6 @@ Built an NLP pipeline that reads resumes, understands them, and ranks candidates
 
 `Python` · `NLP` · `Machine Learning` · `PDF parsing`
 
----
-
-
-## 📈 My GitHub Stats
-
-<div align="center">
-
-![Anu's GitHub Stats](https://github-readme-stats.vercel.app/api?username=an-u-k&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=an-u-k&layout=compact&theme=tokyonight&hide_border=true)
-
-</div>
-
----
 
 ## 🎓 My journey so far
 
