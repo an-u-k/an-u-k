@@ -71,9 +71,9 @@ Built an NLP pipeline that reads resumes, understands them, and ranks candidates
 
 | | |
 |---|---|
-| 🎓 **MSc Data Science, Statistics & Decision Analysis** | Stockholm University 🇸🇪 · 2025 – present |
-| 💼 **Software Engineer I** | Nissan Digital India 🇮🇳 · 2022 – 2025 |
-| 🎓 **Bachelor of Information Technology** | GEC Trivandrum 🇮🇳 · 2018 – 2022 · CGPA 8.66 |
+| 🎓 **MSc Data Science, Statistics & Decision Analysis** | Stockholm University · 2025 – present |
+| 💼 **Software Engineer I** | Nissan Digital India · 2022 – 2025 |
+| 🎓 **Bachelor of Information Technology** | GEC Trivandrum · 2018 – 2022  |
 
 ---
 
